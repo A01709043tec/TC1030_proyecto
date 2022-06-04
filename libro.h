@@ -10,25 +10,25 @@ A01709043
 
 #include <string>
 #include <sstream>
-#include <fstream>
-#include <stdio.h>
-#include <iomanip>
-#include <process.h>
-#include <conio.h>
 #include <iostream>
 
 using namespace std;
 
 class Libro { //clase libro
-    protected:
+    private:
+    
+    int id;
     string titulo;
     string autor;
-    int publifecha;
-    string descripcion;
+    string genero;
 
     public:
-    Libro(): titulo(""), autor(""), publifecha(0), descripcion("") {};
-    Libro(string title, string author, int date, string desc): titulo(title), autor(author), publifecha(date), descripcion(desc) {};
+    Libro(): id(0), titulo(""), autor(""), genero("") {}; //constructor por default
+    Libro(int id_num, string title, string author, string genre): id(id_num), titulo(title), autor(author), genero(genre) {};
+
+    int get_id(){
+        return id;
+    }
 
     string get_titulo() {
         return titulo;
@@ -36,40 +36,18 @@ class Libro { //clase libro
     string get_autor() {
         return autor;
     }
-    int get_publifecha() {
-        return publifecha;
+    string get_genero(){
+        return genero;
     }
-    string get_descripcion() {
-        return descripcion;
-    }
-    void crea_libro(){
-        cout << "\nAgregar nuevo libro: \n";
-        cout << "\nTítulo: ";
-        cin >> titulo;
-        cout << "\nAutor: ";
-        cin >> autor;
-        cout << "\nFecha de publicación: ";
-        cin >> publifecha;
-        cout << "\nDescripción: ";
-        cin >> descripcion;
-    }
-    void muestra_libro(){
-        cout << "\nTítulo: " << titulo;
-        cout << "\nAutor: " << autor;
-        cout << "\nFecha de publicación: " << publifecha;
-        cout << "\nDescripción: " << descripcion;
-    }
-    void actualiza_libro(){
-        cout << "Modificar título: ";
-        cin >> titulo;
-        cout << "Modificar autor: ";
-        cin >> autor;
-        cout << "Modificar fecha de publicación: ";
-        cin >> publifecha;
-        cout << "Modificar descripción: ";
-        cin >> descripcion;
-    }
+
+    string to_string();
 };
 
+string Libro::to_string(){
+    stringstream aux;
+    aux << "Id es:" << ' ' << id << ' ' << " titulo es:" << ' ' << titulo << ' ' << " escrito por:" << ' ' << autor << 
+    ' ' << " y se clasifica en el genero " << ' ' << genero << "\n";
+    return aux.str();
+}
 
 #endif // LIBRO_H_
