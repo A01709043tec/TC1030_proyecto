@@ -8,10 +8,13 @@ Yuna Chung _ A01709043
 
 Un lector podrá:
 - Ver la lista de libros
-- Ver su propia cuenta
 
 Un staff podrá:
 - Ver la lista de libros
-- Modificar los datos del libro
-- Agregar y eliminar libros
-- Eliminar usuarios
+- Ver la lista de Usuarios
+- Agregar un libro
+
+# Consideraciones
+
+El pin para ingresar al sistema como Staff es: 2673
+
