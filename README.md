@@ -18,3 +18,4 @@ Un staff podrá:
 
 El pin para ingresar al sistema como Staff es: 2673
 
+El programa está hecho con C++ standard por lo que corre en todos los sistemas operativos
