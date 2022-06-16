@@ -1,9 +1,12 @@
 /*
-Proyecto TC1030.301
-Clase Usuario
-Yuna Chung
-A01709043
-*/
+ * Proyecto Sistema de Biblioteca clase Usuario
+ * Yuna Chung
+ * A01709043
+ * 2022.06.17
+ * Versión: 4
+ * Esta clase define objeto de tipo Usuario que contiene
+ * las clases heredadadas Staff y Lector
+ */
 
 #ifndef USUARIO_H_
 #define USUARIO_H_
@@ -58,9 +61,10 @@ class Lector: public Usuario { //Herencia desde clase usuario a clase lector
 };
 
 /*
-to_string convierte a atributos a string.
-Conectan todos los valores de los atributos en un string para ser impreso
-*/
+ * to_string convierte a atributos a string.
+ * Conectan todos los valores de los atributos en un string 
+ * para ser impreso
+ */
 
 string Lector::to_string(){
     stringstream aux;
@@ -80,6 +84,12 @@ class Staff:public Usuario { //herencia desde clase usuario a clase staff
     }
     string to_string();
 };
+
+/*
+ * to_string convierte a atributos a string.
+ * Conectan todos los valores de los atributos en un string 
+ * para ser impreso
+ */
 
 string Staff::to_string(){
     stringstream aux;
