@@ -54,7 +54,6 @@ while (opcionprin != 0){ //opciones para el usuario pueda seleccionar
             cout << "Desea agregar libros? [yes/no]" << endl;
             cin >> decide;
             if (decide == "yes"){
-                cout << "Escribe algo para continuar: " << endl;
                 cout << "\n\nTitulo: ";
                 getline(cin, temp_titulo);
                 cin.ignore();

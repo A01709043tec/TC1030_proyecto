@@ -3,7 +3,7 @@
  * Yuna Chung
  * A01709043
  * 2022.06.17
- * Versión: 4
+ * Versión: 5
  * Esta clase define objeto de tipo Usuario que contiene
  * las clases heredadadas Staff y Lector
  */
