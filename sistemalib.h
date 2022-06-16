@@ -3,7 +3,7 @@
  * Yuna Chung
  * A01709043
  * 2022.06.17
- * Versión: 3
+ * Versión: 4
  * Esta clase define objeto de tipo Sistemadebiblioteca que contiene
  * todo el proceso para hacer altas de ususarios y para agregar
  * un nuevo libro. Esta clase es utilizada por la función princial del

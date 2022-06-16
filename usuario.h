@@ -3,7 +3,7 @@
  * Yuna Chung
  * A01709043
  * 2022.06.17
- * Versión: 4
+ * Versión: 5
  * Esta clase define objeto de tipo Usuario que contiene
  * las clases heredadadas Staff y Lector
  */
@@ -24,7 +24,8 @@ class Usuario { //clase usuario
     string tipo;
 
     public:
-    Usuario(): id(0), nombre(""), tipo(""){}; //constructor por default
+    //constructor por default
+    Usuario(): id(0), nombre(""), tipo(""){};
     Usuario(int id_num, string nom, string tip):
     id(id_num), nombre(nom), tipo(tip){};
 
@@ -46,7 +47,8 @@ class Lector: public Usuario { //Herencia desde clase usuario a clase lector
     int libro_rentado;
     public:
     Lector(): Usuario(0, "", "Lector") {};
-    Lector(int id, string nombre, int librent):Usuario(id, nombre, "Lector"), libro_rentado(librent){};
+    Lector(int id, string nombre, int librent): 
+    Usuario(id, nombre, "Lector"), libro_rentado(librent){};
 
     int get_id(){
         return id;
@@ -68,7 +70,9 @@ class Lector: public Usuario { //Herencia desde clase usuario a clase lector
 
 string Lector::to_string(){
     stringstream aux;
-    aux << "Id es:" << ' ' << id << ' '<< "rol es:" << ' ' << tipo << ' ' << "su nombre es:" << ' ' << nombre << ' ' << "usted ha rentado:" << ' ' << libro_rentado << " libros" << "\n";
+    aux << "Id es:" << ' ' << id << ' '<< "rol es:" << ' ' << tipo << ' ' 
+    << "su nombre es:" << ' ' << nombre << ' ' << "usted ha rentado:" 
+    << ' ' << libro_rentado << " libros" << "\n";
     return aux.str();
 }
 
@@ -93,7 +97,8 @@ class Staff:public Usuario { //herencia desde clase usuario a clase staff
 
 string Staff::to_string(){
     stringstream aux;
-    aux << "Id es:" << ' ' << id << ' ' << "rol es:" << ' ' << tipo << ' ' << "su nombre es:" << ' ' << nombre << ' ' << "su ID es:" << ' ' << pin << "\n";
+    aux << "Id es:" << ' ' << id << ' ' << "rol es:" << ' ' << tipo << ' ' 
+    << "su nombre es:" << ' ' << nombre << ' ' << "su ID es:" << ' ' << pin << "\n";
     return aux.str();
 }
 
