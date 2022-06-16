@@ -25,8 +25,10 @@ class Libro { //clase libro
     string genero;
 
     public:
-    Libro(): id(0), titulo(""), autor(""), genero("") {}; //constructor por default
-    Libro(int id_num, string title, string author, string genre): id(id_num), titulo(title), autor(author), genero(genre) {};
+    //constructor por default
+    Libro(): id(0), titulo(""), autor(""), genero("") {};
+    Libro(int id_num, string title, string author, string genre): 
+    id(id_num), titulo(title), autor(author), genero(genre) {};
 
     int get_id(){
         return id;
@@ -53,7 +55,8 @@ class Libro { //clase libro
 
 string Libro::to_string(){
     stringstream aux;
-    aux << "Id es:" << ' ' << id << ' ' << " titulo es:" << ' ' << titulo << ' ' << " escrito por:" << ' ' << autor << 
+    aux << "Id es:" << ' ' << id << ' ' << " titulo es:" << ' ' 
+    << titulo << ' ' << " escrito por:" << ' ' << autor << 
     ' ' << " y se clasifica en el genero " << ' ' << genero << "\n";
     return aux.str();
 }
