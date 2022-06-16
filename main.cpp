@@ -1,6 +1,21 @@
-#include <iostream>
-#include "libro.h"
+/*
+ * Proyecto Sistema de Biblioteca main
+ * Yuna Chung
+ * A01709043
+ * 2022.06.17
+ *
+ * Este es un proyecto para la clase TC1030 Programación Orientado a
+ * Objetos. Es un programa que guarda una lista de usuarios y libros
+ * y lo despliega dependiendo del tipo de usuario. También, si el usuario
+ * es un Staff, podrá agregar libro.
+*/
+
+#include <iostream> //para imprimir
+
+#include "libro.h" //bibliotecas con objetos de mi proyecto
+
 #include "usuario.h"
+
 #include "sistemalib.h"
 
 using namespace std;
@@ -9,6 +24,7 @@ int main(int argc, char * argv[]){
     int opcionprin = 9;
     int rustaff = 0;
     string decide = "k";
+    string greeting;
     string temp_autor;
     string temp_titulo;
     string temp_genero;
@@ -23,12 +39,12 @@ while (opcionprin != 0){ //opciones para el usuario pueda seleccionar
     cout << "\n\nIngrese su opcion: ";
     cin >> opcionprin;
 
-    if (opcionprin == 1){
+    if (opcionprin == 1){ //Staff
         sistemalib.crea_usuario();
         sistemalib.crea_libro();
         cout << "Ingresa PIN del Staff:" << ' ';
         cin >> rustaff;
-        if (rustaff == 2673){
+        if (rustaff == 2673){ //PIN del Staff
             cout << "Lista de Libro: " << endl;
             sistemalib.muestra_libro();
             cout << "Lista de Staff: " << endl;
@@ -38,14 +54,16 @@ while (opcionprin != 0){ //opciones para el usuario pueda seleccionar
             cout << "Desea agregar libros? [yes/no]" << endl;
             cin >> decide;
             if (decide == "yes"){
-                cout << "Agrega libro: " << endl;
+                cout << "Escribe algo para continuar: " << endl;
                 cout << "\n\nTitulo: ";
-                cin >> temp_titulo;
+                getline(cin, temp_titulo);
+                cin.ignore();
                 cout << "\n\nAutor: ";
-                cin >> temp_autor;
+                getline(cin, temp_autor);
+                cin.ignore();
                 cout << "\n\nGenero: ";
-                cin >> temp_genero;
-                cout << temp_titulo << ", " << temp_autor << ", " << temp_genero;
+                getline(cin, temp_genero);
+                cin.ignore();
                 sistemalib.agrega_libro(temp_titulo, temp_autor, temp_genero);
                 cout << "Nueva lista de Libro: " << endl;
                 sistemalib.muestra_libro();
@@ -60,14 +78,14 @@ while (opcionprin != 0){ //opciones para el usuario pueda seleccionar
         }
     }
 
-    if (opcionprin == 2){
+    if (opcionprin == 2){ //Lector
         sistemalib.crea_libro();
         cout << "Bienvenido! Aqui le mostramos la lista de libros: " << endl;
         sistemalib.muestra_libro();
     }   
 }
 
-if (opcionprin == 0){
+if (opcionprin == 0){ //Salir del sistema
         cout << "Adios" << endl;
     }
 }
